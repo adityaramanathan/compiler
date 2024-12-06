@@ -1,0 +1,17 @@
+// This is the advanced test
+
+VAR x;
+PROCEDURE square(n);
+BEGIN
+RETURN n * n;
+END;
+BEGIN
+x := 1;
+WHILE x <= 10 DO
+BEGIN
+WRITELN(square(x));
+x := x + 1;
+// We are done with the advanced test Well mostly
+END;
+END;
+.

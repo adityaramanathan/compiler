@@ -1,0 +1,41 @@
+// This test is for CompilingProcedures - a combination of all the tests
+VAR f, ignore;
+VAR n, x;
+PROCEDURE max(x, y);
+BEGIN
+max := x;
+IF y > x THEN max := y;
+END;
+
+PROCEDURE foo(d);
+   ignore := bar(d + f);
+   PROCEDURE bar(f);
+   WRITELN(f);
+
+PROCEDURE print(n);
+   WRITELN(n);
+
+PROCEDURE printSquare(n);
+        WRITELN(n * n);
+
+PROCEDURE countUp(count, max);
+IF count <= max THEN
+BEGIN
+WRITELN(count);
+ignore := countUp(count + 1, max);
+END;
+
+BEGIN
+WRITELN(max(5, 12));
+WRITELN(max(13, 7));
+f := 2;
+    ignore := foo(3);
+     WRITELN(f);
+n := 3;
+     ignore := print(5);
+     WRITELN(n);
+x := 1;
+          ignore := printSquare(x + 2);
+x := countUp(2, 4);
+        END;
+.
